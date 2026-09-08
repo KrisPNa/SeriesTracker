@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/collectionCardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_small"
+    android:contentDescription="Коллекция"
+    android:clipToOutline="true"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="false"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:id="@+id/collectionCardContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_medium"
+        android:clickable="false"
+        android:focusable="false">
+
+        <!-- Верхняя строка: название и звездочка избранного -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/collectionNameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Название коллекции"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_blue_dark"
+                android:maxLines="2"
+                android:ellipsize="end" />
+
+            <!-- Звездочка избранного (только отображение) -->
+            <ImageView
+                android:id="@+id/favoriteStar"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_baseline_star_24"
+                android:visibility="gone"
+                android:contentDescription="Избранная коллекция" />
+
+        </LinearLayout>
+
+        <!-- Индикатор цвета коллекции -->
+        <View
+            android:id="@+id/colorIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/primary_blue"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/seriesCountTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0 сериалов"
+            android:textSize="14sp"
+            android:textColor="@color/text_gray" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

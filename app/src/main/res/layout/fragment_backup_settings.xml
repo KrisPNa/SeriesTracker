@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="16dp"
+    android:background="?android:attr/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"  >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:minHeight="48dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:contentDescription="Кнопка назад"
+                android:paddingTop="30dp"
+                android:src="@drawable/ic_baseline_arrow_back_24" />
+
+            <!-- Заголовок -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginBottom="32dp"
+                android:gravity="center"
+                android:text="Настройки"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Тема -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Тёмная тема"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="16sp" />
+
+            <Switch
+                android:id="@+id/dark_theme_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp" />
+        </LinearLayout>
+
+        <!-- Автоматический бэкап -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="32dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Автоматический бэкап"
+                android:textSize="16sp"
+                android:textColor="?android:attr/textColorPrimary" />
+
+            <Switch
+                android:id="@+id/auto_backup_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp" />
+        </LinearLayout>
+
+        <!-- Карточка с информацией -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="?android:attr/colorBackgroundFloating">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Информация о последнем бэкапе -->
+                <TextView
+                    android:id="@+id/last_backup_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Последний бэкап: не создан"
+                    android:textSize="14sp"
+                    android:textColor="?android:attr/textColorSecondary" />
+
+                <!-- Информация о папке бэкапов -->
+                <TextView
+                    android:id="@+id/backup_location_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Папка бэкапов: "
+                    android:textSize="14sp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:maxLines="3"
+                    android:ellipsize="end" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Кнопка создания бэкапа -->
+        <Button
+            android:id="@+id/create_backup_btn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="16dp"
+            android:text="Создать резервную копию"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:strokeColor="?android:attr/colorAccent"
+            app:strokeWidth="1dp" />
+
+        <!-- Кнопка восстановления -->
+        <Button
+            android:id="@+id/restore_backup_btn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="24dp"
+            android:text="Восстановить из резервной копии"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:strokeColor="?android:attr/colorAccent"
+            app:strokeWidth="1dp" />
+
+        <!-- Прогресс бар (скрытый по умолчанию) -->
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:max="100"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/progress_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="13sp"
+            android:visibility="gone" />
+
+        <!-- Сайты для поиска лакорнов -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/watch_search_sites_title"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/watch_search_sites_hint"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/watch_search_sites_edit"
+            style="@style/Widget.App.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="top|start"
+            android:hint="@string/watch_search_sites_hint_field"
+            android:inputType="textUri|textMultiLine"
+            android:minHeight="120dp"
+            android:minLines="4" />
+
+        <Button
+            android:id="@+id/save_watch_search_sites_btn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="24dp"
+            android:text="@string/watch_search_sites_save"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:strokeColor="?android:attr/colorAccent"
+            app:strokeWidth="1dp" />
+
+        <!-- Информационный раздел -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="?android:attr/colorBackgroundFloating">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Информация"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Фото и обложки в копии сжимаются для меньшего размера; видео сохраняются как есть"
+                    android:textSize="12sp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:lineSpacingExtra="2dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="• Хранятся последние 5 ZIP-копий"
+                    android:textSize="12sp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:lineSpacingExtra="2dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="• Для Android 10+ разрешения на хранилище не требуются"
+                    android:textSize="12sp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:lineSpacingExtra="2dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="• Для сохранения копий в облаке используйте встроенную систему бэкапов Android"
+                    android:textSize="12sp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:lineSpacingExtra="2dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Аккаунт (внизу страницы) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Аккаунт"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/cloud_account_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="Не выполнен вход"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/cloud_auto_sync_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Синхронизация с сайтом автоматическая, пока выполнен вход в аккаунт."
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/cloud_account_btn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="16dp"
+            android:text="Войти в аккаунт"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:strokeColor="?android:attr/colorAccent"
+            app:strokeWidth="1dp" />
+
+    </LinearLayout>
+</ScrollView>

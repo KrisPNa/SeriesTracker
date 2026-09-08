@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/sort_by_name_asc"
+            android:title="По названию (А-Я)"
+            android:checkable="true"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/sort_by_name_desc"
+            android:title="По названию (Я-А)"
+            android:checkable="true"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/sort_by_episodes_asc"
+            android:title="По количеству серий (↑)"
+            android:checkable="true"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/sort_by_episodes_desc"
+            android:title="По количеству серий (↓)"
+            android:checkable="true"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/sort_by_status_watching"
+            android:title="Смотрю"
+            android:checkable="true"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/sort_by_status_completed"
+            android:title="Завершено"
+            android:checkable="true"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/sort_by_status_dropped"
+            android:title="Брошено"
+            android:checkable="true"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/sort_by_status_planned"
+            android:title="Запланировано"
+            android:checkable="true"
+            app:showAsAction="never" />
+
+
+    </group>
+
+</menu>

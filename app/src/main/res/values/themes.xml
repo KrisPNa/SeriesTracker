@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Стиль для CheckBox -->
+    <style name="CheckBoxStyle" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
+        <item name="android:textColor">@color/text_dark</item>
+        <item name="buttonTint">@color/primary_blue</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <!-- Стиль для TextView -->
+    <style name="TextViewDark">
+        <item name="android:textColor">@color/text_dark</item>
+    </style>
+
+    <!-- Основная тема: DayNight — светлая / тёмная -->
+    <style name="Theme.SeriesTracker" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/text_dark</item>
+        <item name="colorOnBackground">@color/text_dark</item>
+
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorPrimaryVariant">@color/primary_blue_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/primary_blue</item>
+        <item name="colorAccent">@color/primary_blue</item>
+
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:navigationBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+
+        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:textColorPrimary">@color/text_dark</item>
+        <item name="android:textColorSecondary">@color/text_gray</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+
+        <item name="editTextStyle">@style/Widget.App.EditText</item>
+        <item name="android:editTextStyle">@style/Widget.App.EditText</item>
+        <item name="checkboxStyle">@style/CheckBoxStyle</item>
+
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <style name="Widget.App.EditText" parent="@android:style/Widget.EditText">
+        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="android:background">@drawable/edittext_background</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:enabled">true</item>
+        <item name="android:cursorVisible">true</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+    </style>
+
+</resources>

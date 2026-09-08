@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Фон и поверхности (тёмная тема) -->
+    <color name="background">#FF121212</color>
+    <color name="surface">#FF1E1E1E</color>
+    <color name="background_white">#FF1E1E1E</color>
+    <color name="background_gray">#FF2A2A2A</color>
+
+    <!-- Текст -->
+    <color name="text_primary">#DEFFFFFF</color>
+    <color name="text_secondary">#B3FFFFFF</color>
+    <color name="text_hint">#55FFFFFF</color>
+    <color name="text_dark">#FFE0E0E0</color>
+    <color name="text_gray">#FFB0B0B0</color>
+
+    <!-- Разделители -->
+    <color name="divider">#33FFFFFF</color>
+
+    <color name="gray_light">#FF3A3A3A</color>
+    <color name="gray_dark">#FFBDBDBD</color>
+    <color name="transparent_black">#99000000</color>
+    <color name="transparent_white">#22FFFFFF</color>
+
+    <color name="search_background">#FF2A2A2A</color>
+    <color name="chip_unselected">#FF2A2A2A</color>
+    <color name="button_disabled">#FF424242</color>
+    <color name="card_shadow">#66000000</color>
+
+    <color name="media_background">#FF2C2C2C</color>
+    <color name="delete_button_bg">#FF2A2A2A</color>
+    <color name="delete_button_border">#FF424242</color>
+
+    <!-- Градиент обложки → фон экрана -->
+    <color name="cover_fade_start">#00121212</color>
+    <color name="cover_fade_center">#44121212</color>
+    <color name="cover_fade_end">#FF121212</color>
+
+    <!-- Бейдж с количеством (мягкий индиго) -->
+    <color name="counter_badge">#FF353348</color>
+    <color name="counter_badge_text">#FFE8E6F0</color>
+</resources>
